@@ -1,0 +1,20 @@
+{
+    "intelephense.environment.phpVersion": "7.4",
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "html-css-class-completion.HTMLLanguages": [
+        "html",
+        "vue",
+        "razor",
+        "blade",
+        "handlebars",
+        "twig",
+        "django-html",
+        "php",
+        "markdown",
+        "erb",
+        "ejs",
+        "svelte"
+    ]
+}
