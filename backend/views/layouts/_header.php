@@ -7,6 +7,9 @@ use yii\bootstrap4\NavBar;
 NavBar::begin([
     'brandLabel' => Yii::$app->name,
     'brandUrl' => Yii::$app->homeUrl,
+    'innerContainerOptions' => [
+        'class' => 'container-fluid'
+    ],
     'options' => [
         'class' => 'navbar navbar-expand-lg navbar-light bg-light shadow-sm',
     ],
@@ -27,7 +30,7 @@ if (Yii::$app->user->isGuest) {
         . '</li>';
 }
 echo Nav::widget([
-    'options' => ['class' => 'navbar-nav'],
+    'options' => ['class' => 'navbar-nav ml-auto'],
     'items' => $menuItems,
 ]);
 NavBar::end();
