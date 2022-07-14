@@ -1,6 +1,9 @@
 FROM yiisoftware/yii2-php:7.4-apache
 
 COPY . /srv/app
+
+WORKDIR /srv/app
+
 COPY docker/apache/vhost.conf /etc/apache2/sites-available/000-default.conf
 
 RUN curl -sS https://getcomposer.org/installer \
