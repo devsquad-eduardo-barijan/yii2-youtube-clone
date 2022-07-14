@@ -14,7 +14,6 @@ AppAsset::register($this);
 $this->beginContent('@backend/views/layouts/base.php');
 ?>
 <main role="main" class="d-flex">
-    <?= $this->render('_sidebar'); ?>
     <div class="content-wrapper p-3">
         <?= Alert::widget() ?>
         <?= $content ?>
