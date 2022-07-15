@@ -1,8 +1,5 @@
 {
     "intelephense.environment.phpVersion": "7.4",
-    "editor.quickSuggestions": {
-        "strings": "on"
-    },
     "html-css-class-completion.HTMLLanguages": [
         "html",
         "vue",
