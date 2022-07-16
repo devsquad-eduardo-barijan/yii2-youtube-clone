@@ -15,22 +15,25 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <div class="d-flex flex-column justify-content-center align-items-center">
-        
-            <div class="upload-icon">
-                <i class="fas fa-upload"></i>
-            </div>
-            <br>
-        
-            <p class="m-o">Drag and drop  a file you want to upload</p>
-            <p class="text-muted">Your video you will be private until you publish it</p>
-        
-            <?php ActiveForm::begin([
-                'options' => ['enctype' => 'multipart/form-data']
-            ]) ?>
-            <button class="btn btn-primary btn-file">
-                Select file
-                <input type="file" name="video" id="videoFile">
-            </button>
-            <?php ActiveForm::end() ?>
+
+        <div class="upload-icon">
+            <i class="fas fa-upload"></i>
+        </div>
+        <br>
+
+        <p class="m-o">Drag and drop a file you want to upload</p>
+        <p class="text-muted">Your video you will be private until you publish it</p>
+
+        <?php $form = ActiveForm::begin([
+            'options' => ['enctype' => 'multipart/form-data']
+        ]) ?>
+
+        <?= $form->errorSummary($model) ?>
+
+        <button class="btn btn-primary btn-file">
+            Select file
+            <input type="file" name="video" id="videoFile">
+        </button>
+        <?php ActiveForm::end() ?>
     </div>
 </div>
