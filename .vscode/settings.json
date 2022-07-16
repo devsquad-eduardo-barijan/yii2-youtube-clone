@@ -13,5 +13,7 @@
         "erb",
         "ejs",
         "svelte"
-    ]
+    ],
+    "emmet.showSuggestionsAsSnippets": false,
+    "emmet.useInlineCompletions": false
 }
