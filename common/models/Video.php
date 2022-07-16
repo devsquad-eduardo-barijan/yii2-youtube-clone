@@ -88,6 +88,14 @@ class Video extends \yii\db\ActiveRecord
         ];
     }
 
+    public function getStatusLabels()
+    {
+        return [
+            self::STATUS_UNLISTED => 'Unlisted',
+            self::STATUS_PUBLISHED => 'Published'
+        ];
+    }
+
     /**
      * Gets query for [[CreatedBy]].
      *
@@ -123,7 +131,7 @@ class Video extends \yii\db\ActiveRecord
         }
 
         if ($isInsert) {
-            $videoPath = Yii::getAlias('@frontend/web/storage/videos/'.$this->video_id.'.mp4');
+            $videoPath = Yii::getAlias('@frontend/web/storage/videos/' . $this->video_id . '.mp4');
             if (!is_dir(dirname($videoPath))) {
                 FileHelper::createDirectory(dirname($videoPath));
             }
@@ -134,6 +142,6 @@ class Video extends \yii\db\ActiveRecord
 
     public function getVideoLink()
     {
-        return Yii::$app->params['frontendUrl']."storage/videos/{$this->video_id}.mp4";
+        return Yii::$app->params['frontendUrl'] . "storage/videos/{$this->video_id}.mp4";
     }
 }

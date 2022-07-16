@@ -24,7 +24,7 @@ use yii\bootstrap4\ActiveForm;
         </div>
         <div class="col-sm-4">
 
-            <div class="embed-responsive embed-responsive-16by9">
+            <div class="embed-responsive embed-responsive-16by9 mb-4">
                 <video class="embed-responsive-item" src="<?= $model->getVideoLink() ?>" controls>
                 </video>
             </div>
@@ -41,7 +41,7 @@ use yii\bootstrap4\ActiveForm;
                 <?= $model->video_name ?>
             </div>
 
-            <?= $form->field($model, 'status')->textInput() ?>
+            <?= $form->field($model, 'status')->dropdownList($model->getStatusLabels()) ?>
         </div>
     </div>
 
