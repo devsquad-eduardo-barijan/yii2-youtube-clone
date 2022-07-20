@@ -127,9 +127,11 @@ class Video extends \yii\db\ActiveRecord
     {
         $isInsert = $this->isNewRecord;
         if ($isInsert) {
-            $this->video_id = Yii::$app->security->generateRandomString(8);
-            $this->title = $this->video->name;
-            $this->video_name = $this->video->name;
+            if ($this->video) {
+                $this->video_id = Yii::$app->security->generateRandomString(8);
+                $this->title = $this->video->name;
+                $this->video_name = $this->video->name;
+            }
         }
 
         if ($this->thumbnail) {
